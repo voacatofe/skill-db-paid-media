@@ -1,0 +1,36 @@
+{
+  "name": "build-paid-media-warehouse-skill",
+  "version": "1.0.0",
+  "description": "Install the dlt-first paid media warehouse skill for AI coding agents.",
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "build-paid-media-warehouse-skill": "bin/installer.js"
+  },
+  "files": [
+    "bin/",
+    "build-paid-media-warehouse/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "npm test && npm pack --dry-run"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "codex",
+    "skill",
+    "dlt",
+    "postgresql",
+    "meta-ads",
+    "google-ads",
+    "dbt",
+    "data-warehouse"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,35 @@
+name: Validate skill
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Test installer
+        run: npm test
+
+      - name: Inspect npm package
+        run: npm pack --dry-run
+
+      - name: Install into an isolated directory
+        run: node bin/installer.js --dir "$RUNNER_TEMP/skills" --json
+
+      - name: Verify installed skill
+        run: |
+          test -f "$RUNNER_TEMP/skills/build-paid-media-warehouse/SKILL.md"
+          test -f "$RUNNER_TEMP/skills/build-paid-media-warehouse/agents/openai.yaml"
+          test -f "$RUNNER_TEMP/skills/build-paid-media-warehouse/references/dlt-architecture.md"
+          python -m py_compile "$RUNNER_TEMP/skills/build-paid-media-warehouse/scripts/validate_dlt_project.py"

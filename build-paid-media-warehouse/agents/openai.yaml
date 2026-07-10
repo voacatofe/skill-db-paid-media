@@ -1,0 +1,6 @@
+interface:
+  display_name: "Paid Media Warehouse"
+  short_description: "Build dlt-first paid media warehouses"
+  default_prompt: "Use $build-paid-media-warehouse to design a dlt-first PostgreSQL warehouse for Meta Ads and Google Ads."
+policy:
+  allow_implicit_invocation: true
