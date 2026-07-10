@@ -2,9 +2,21 @@
 
 Skill global dlt-first para construir, auditar e evoluir warehouses PostgreSQL de Meta Ads e Google Ads, com dbt, modelagem dimensional e camadas semânticas para Looker Studio e Power BI.
 
-## Instalação global no Codex
+## Instalação
 
 Requer Node.js 18 ou mais recente:
+
+```bash
+npx skills add voacatofe/skill-db-paid-media
+```
+
+A instalação identifica a skill disponível e conduz a escolha do agente e do escopo. Reinicie o agente depois da instalação para recarregar as skills.
+
+## Instalação automática
+
+Use as opções abaixo somente em scripts, CI ou instalações sem perguntas.
+
+Instalar globalmente no Codex:
 
 ```bash
 npx skills add voacatofe/skill-db-paid-media \
@@ -13,10 +25,6 @@ npx skills add voacatofe/skill-db-paid-media \
   --agent codex \
   --yes
 ```
-
-Reinicie o Codex depois da instalação para recarregar as skills.
-
-## Instalação em outros agentes
 
 Instalar globalmente em todos os agentes compatíveis detectados:
 
